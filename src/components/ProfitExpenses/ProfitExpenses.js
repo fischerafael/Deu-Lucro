@@ -1,16 +1,25 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import { GlobalContext } from '../../context/GlobalState';
 
 function ProfitExpenses() {
+
+    const { transactions } = useContext(GlobalContext);
+
+    const amounts = transactions.map(transaction => transaction.amount);
+
+    const income = amounts.filter(item => item > 0).reduce((acc,item) => (acc+=item), 0).toFixed(2);
+    const expense = (amounts.filter(item => item < 0).reduce((acc,item) => (acc+=item), 0)*-1).toFixed(2);
+
     return (
         <div>
-            <div className="pro-exp-cotainer">
-                <div>
-                    <h4>Receitas</h4>
-                    <p id="money-plus" className="money plus">+ R$ 0,00</p>
+            <div className="proex">
+                <div className="proex-value">
+                    <p>Receitas</p>
+                    <h4 className="money plus">+ R$ {income}</h4>
                 </div>
-                <div>
-                    <h4>Despesas</h4>
-                    <p id="money-minus" className="money minus">- R$ 0,00</p>
+                <div className="proex-value"> 
+                    <p>Despesas</p>
+                    <h4 className="money minus">- R$ {expense}</h4>
                 </div>
             </div>
         </div>

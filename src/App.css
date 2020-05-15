@@ -22,9 +22,12 @@ body {
 
 .content {
   background: white;
+  margin: 50px;
   padding: 50px;  
   min-width: 400px;
   box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
@@ -37,10 +40,8 @@ h2 {
   color: #3f3f44;
 }
 
-h3 {
-  border-bottom: 1px solid #bbb;
-  padding-bottom: 10px;
-  margin: 40px 0 10px;
+h3 {  
+  font-size: 12px;
 }
 
 h4 {
@@ -48,24 +49,31 @@ h4 {
   text-transform: uppercase;
 }
 
+p {
+  margin: 0;
+  font-size: 12px;
+}
 
+.amount {
+  margin: auto;
+}
 
-.pro-exp-container {
-  background-color: #fff;
+.proex {
+  background-color: #3f3f44;
   box-shadow: var(--box-shadow);
   padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  margin: 20px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;  
+  margin: 20px 0;  
 }
 
-.pro-exp-container > div {
-  flex: 1;
-  text-align: center;
+.proex-value {
+  text-align: center;  
 }
 
-.pro-exp-container > div:first-of-type {
-  border-right: 1px solid #dedede;
+.proex p {
+  font-size: 12px;
+  color: white;
 }
 
 .money {
@@ -74,13 +82,92 @@ h4 {
   margin: 5px 0;
 }
 
-.money.plus {
+.plus {
   color: #cceabb;
 }
 
-.money.minus {
+.minus {
   color: #fdcb9e;
 }
+
+.AddTransaction {
+  padding: 15px 25px;
+  background: #3f3f44;
+  box-shadow: var(--box-shadow);
+  width: 100%;
+}
+
+.AddTransaction input {
+  margin: 10px 0;
+  font: bold;  
+  height: 40px;
+}
+
+.AddTransaction input:first-child {
+  margin-top: 20px;
+}
+
+.AddTransaction button {
+  justify-self: end;
+  border: none;
+  width: 100%;
+  height: 40px;
+  margin: 15px 0;
+  background: #cceabb;
+  color: white;
+  font-weight: bold;  
+  box-shadow: var(--box-shadow);
+  transition: .5s;
+}
+
+.AddTransaction button:hover {
+  background: #fdcb9e;
+}
+
+.transaction ul {
+  list-style: none;
+  padding: 0; 
+}
+
+.transaction li {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  justify-content: center; 
+  padding: 15px;
+  background: #f7f7f7;
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  margin: 5px 0;
+}
+
+.transaction p {
+  align-self: center;
+  font-size: 12px;  
+}
+
+.transaction h4 {
+  align-self: center;
+  justify-self: end;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.transaction button {
+  justify-self: end;
+  border: none;
+  width: 20px;
+  height: 20px;
+  background: #fdcb9e;
+  color: white;
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
+  transition: .5s;
+}
+
+.transaction button:hover {
+  background: #3f3f44;
+}
+
 
 label {
   display: inline-block;
