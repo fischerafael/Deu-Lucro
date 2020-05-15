@@ -1,3 +1,5 @@
+https://github.com/designfischer/Deu-Lucro/blob/master/Deu-Lucro.gif
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
